@@ -97,7 +97,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-sm text-gray-600 dark:text-gray-400">
           <p className="mb-2">
-            © 2024 GHANIYY. All rights reserved.
+            © 2025 GHANIYY. All rights reserved.
           </p>
           <p className="text-xs">
             Customers must comply with third-party service terms. We provide access and setup support only.
