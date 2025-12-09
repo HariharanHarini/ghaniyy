@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ChevronRight,
@@ -13,9 +13,34 @@ import { products } from '../data/products';
 
 export function Home() {
   const [email, setEmail] = useState('');
+    // Always start Home page at the top
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'auto', // or 'smooth' if you like
+    });
+  }, []);
+
+
   const featuredProducts = products.filter((p) => p.featured);
   const allProducts = products.slice(0, 24); // For background grid
-  const trendingProducts = products.slice(0, 10); // Top 10 trending
+
+  // 🔽 CUSTOM ORDER FOR TOP 10
+  const priority: Record<string, number> = {
+    'LinkedIn Premium': 1,
+    'Canva Pro': 2,
+    'Netflix Premium': 3,
+  };
+
+  const trendingProducts = products
+    .filter((p) => p.featured) // use your featured/top products
+    .sort((a, b) => {
+      const rankA = priority[a.name] ?? 999;
+      const rankB = priority[b.name] ?? 999;
+      return rankA - rankB;
+    })
+    .slice(0, 10); // keep only Top 10
 
   const scrollCarousel = (direction: 'left' | 'right') => {
     const carousel = document.getElementById('trending-carousel');
