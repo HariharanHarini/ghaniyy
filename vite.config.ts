@@ -4,7 +4,7 @@ import path from 'path';
 
 export default defineConfig({
   // 👇 this is correct for your repo
-  base: '/ghaniyy/',
+  base: '/',
 
   plugins: [react()],
 
