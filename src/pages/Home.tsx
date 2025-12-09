@@ -174,27 +174,27 @@ export function Home() {
               {trendingProducts.map((product, index) => (
                 <div
                   key={product.id}
-                  className="flex-shrink-0 w-[140px] flex items-center gap-2"
+                  className="flex-shrink-0 w-[160px] flex items-center gap-2"
                 >
                   {/* Bright pink ranking number */}
                   <span className="top10-rank text-4xl">{index + 1}</span>
 
                   {/* Icon + text stacked */}
                   <div className="flex flex-col items-start gap-1">
-                    {/* Small icon – responsive for mobile/desktop */}
+                    {/* Icon – bigger on desktop, reasonable on mobile */}
                     <div className="rounded-lg overflow-hidden shadow-md border border-gray-300 dark:border-gray-700">
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="object-cover w-12 h-12 md:w-16 md:h-16"
+                        className="object-cover w-16 h-16 md:w-24 md:h-24 lg:w-28 lg:h-28"
                       />
                     </div>
 
                     <Link to={`/product/${product.id}`} className="text-left">
-                      <p className="text-xs text-gray-900 dark:text-white line-clamp-2 leading-tight">
+                      <p className="text-xs sm:text-sm text-gray-900 dark:text-white line-clamp-2 leading-tight">
                         {product.name}
                       </p>
-                      <p className="text-xs text-pink-600 dark:text-pink-400">
+                      <p className="text-xs sm:text-sm text-pink-600 dark:text-pink-400">
                         {product.price}
                       </p>
                     </Link>
