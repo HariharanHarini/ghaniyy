@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -14,14 +14,19 @@ import { Wishlist } from './pages/Wishlist';
 import { ThemeProvider } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
 import { Toaster } from './components/ui/sonner';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export default function App() {
   return (
     <ThemeProvider>
       <CartProvider>
         <Router>
+          {/* Force scroll to top on first load & route changes */}
+          <ScrollToTop />
+
           <div className="flex flex-col min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
             <Header />
+
             <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -36,6 +41,7 @@ export default function App() {
                 <Route path="/wishlist" element={<Wishlist />} />
               </Routes>
             </main>
+
             <Footer />
             <Toaster position="top-right" />
           </div>
