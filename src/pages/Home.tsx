@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ChevronRight,
@@ -13,17 +13,7 @@ import { products } from '../data/products';
 
 export function Home() {
   const [email, setEmail] = useState('');
-    // Always start Home page at the top
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'auto', // or 'smooth' if you like
-    });
-  }, []);
 
-
-  const featuredProducts = products.filter((p) => p.featured);
   const allProducts = products.slice(0, 24); // For background grid
 
   // 🔽 CUSTOM ORDER FOR TOP 10
@@ -149,7 +139,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Top 10 Trending Section – super small icons + ranking + both buttons */}
+      {/* Top 10 Trending Section – mobile friendly icons + ranking + buttons */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           {/* Section Header */}
@@ -179,7 +169,7 @@ export function Home() {
             {/* CAROUSEL */}
             <div
               id="trending-carousel"
-              className="flex-1 flex gap-4 overflow-hidden"
+              className="flex-1 flex gap-4 overflow-x-auto overflow-y-hidden scrollbar-hide"
             >
               {trendingProducts.map((product, index) => (
                 <div
@@ -191,13 +181,12 @@ export function Home() {
 
                   {/* Icon + text stacked */}
                   <div className="flex flex-col items-start gap-1">
-                    {/* 48x48 icon – forced with inline style */}
+                    {/* Small icon – responsive for mobile/desktop */}
                     <div className="rounded-lg overflow-hidden shadow-md border border-gray-300 dark:border-gray-700">
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="object-cover"
-                        style={{ width: 300, height: 300 }}
+                        className="object-cover w-12 h-12 md:w-16 md:h-16"
                       />
                     </div>
 
