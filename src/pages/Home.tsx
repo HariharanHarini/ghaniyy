@@ -8,16 +8,16 @@ import {
   TrendingUp,
   ChevronLeft,
 } from 'lucide-react';
+
 import { products } from '../data/products';
 
 export function Home() {
   const [email, setEmail] = useState('');
 
-  const allProducts = products.slice(0, 24); // Poster grid background
+  // Background grid images
+  const allProducts = products.slice(0, 24);
 
-  // ===============================
-  // CUSTOM TOP 10 ORDER
-  // ===============================
+  // Custom ranking
   const priority: Record<string, number> = {
     'LinkedIn Premium': 1,
     'Canva Pro': 2,
@@ -27,54 +27,53 @@ export function Home() {
   const trendingProducts = products
     .filter((p) => p.featured)
     .sort((a, b) => {
-      const aRank = priority[a.name] ?? 999;
-      const bRank = priority[b.name] ?? 999;
-      return aRank - bRank;
+      const rankA = priority[a.name] ?? 999;
+      const rankB = priority[b.name] ?? 999;
+      return rankA - rankB;
     })
     .slice(0, 10);
 
   const scrollCarousel = (direction: 'left' | 'right') => {
     const carousel = document.getElementById('trending-carousel');
-    if (!carousel) return;
-
-    const amount = 180;
-    carousel.scrollBy({
-      left: direction === 'left' ? -amount : amount,
-      behavior: 'smooth',
-    });
+    if (carousel) {
+      const scrollAmount = 200;
+      carousel.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
   };
 
   return (
     <div className="bg-white dark:bg-gray-900">
 
-      {/* ===============================
+      {/* ----------------------------------------------------------
           HERO SECTION
-      =============================== */}
+      ----------------------------------------------------------- */}
       <section className="relative min-h-screen overflow-hidden">
 
-        {/* Background Poster Grid */}
+        {/* Background grid of posters */}
         <div className="absolute inset-0 grid grid-cols-6 md:grid-cols-8 gap-2 p-4 opacity-60">
-          {allProducts.map((product, i) => (
+          {allProducts.map((product, index) => (
             <div
-              key={i}
+              key={index}
               className="relative aspect-[3/4] rounded-lg overflow-hidden animate-fade-in"
-              style={{ animationDelay: `${i * 0.05}s` }}
+              style={{ animationDelay: `${index * 0.05}s` }}
             >
               <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
             </div>
           ))}
         </div>
 
-        {/* Dark Overlays */}
+        {/* Dark overlays */}
         <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
         <div className="absolute inset-0 bg-gradient-to-b from-pink-900/30 via-black/50 to-black/70" />
         <div className="absolute inset-0 bg-radial-gradient from-pink-500/20 via-transparent to-transparent" />
 
-        {/* Hero Content */}
+        {/* Text content */}
         <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
           <div className="max-w-5xl mx-auto text-center space-y-8 py-20">
-
-            <h1 className="text-5xl md:text-7xl lg:text-8xl text-white mb-6 font-bold tracking-tight drop-shadow-2xl">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl text-white tracking-tight drop-shadow-2xl">
               Premium Tools & Services
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-600">
@@ -87,9 +86,9 @@ export function Home() {
               <span className="text-pink-400">₹29/month</span>
             </p>
 
-            {/* Email Box + CTA */}
-            <div className="pt-8 max-w-3xl mx-auto">
-              <p className="text-xl text-white/90 mb-6">Ready to save? Enter your email to get started</p>
+            {/* Email box + button */}
+            <div className="pt-6 max-w-3xl mx-auto">
+              <p className="text-xl text-white/90 mb-4">Enter your email to get started</p>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <input
@@ -97,227 +96,131 @@ export function Home() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Enter your email"
-                  className="flex-1 px-6 py-4 rounded-xl bg-white/10 backdrop-blur-md border-2 border-white/20
-                             text-white placeholder-white/60 focus:outline-none focus:border-pink-400 text-lg"
+                  className="flex-1 px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder-white/60 focus:border-pink-400"
                 />
-
                 <Link
                   to="/services"
-                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-500 to-pink-600
-                             hover:from-pink-600 hover:to-pink-700 text-white px-8 py-4 rounded-xl transition-all text-xl
-                             shadow-2xl hover:shadow-pink-500/50"
+                  className="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-pink-500 to-pink-600 text-white px-8 py-4 rounded-xl text-xl shadow-xl"
                 >
-                  Get Started
-                  <ChevronRight className="w-6 h-6" />
+                  Get Started <ChevronRight className="w-6 h-6" />
                 </Link>
               </div>
             </div>
 
-            {/* Trust Badges */}
-            <div className="flex flex-wrap justify-center gap-8 pt-8">
-              <div className="flex items-center gap-3 text-white/90">
-                <div className="bg-pink-500/20 p-3 rounded-full">
-                  <Star className="w-6 h-6 text-pink-400" />
-                </div>
+            {/* Trust badges */}
+            <div className="flex flex-wrap justify-center gap-8 pt-6 text-white/90">
+              <div className="flex items-center gap-3">
+                <Star className="w-6 h-6 text-pink-400" />
                 <span className="text-lg">100+ Services</span>
               </div>
-
-              <div className="flex items-center gap-3 text-white/90">
-                <div className="bg-pink-500/20 p-3 rounded-full">
-                  <Zap className="w-6 h-6 text-pink-400" />
-                </div>
+              <div className="flex items-center gap-3">
+                <Zap className="w-6 h-6 text-pink-400" />
                 <span className="text-lg">Instant Delivery</span>
               </div>
-
-              <div className="flex items-center gap-3 text-white/90">
-                <div className="bg-pink-500/20 p-3 rounded-full">
-                  <Shield className="w-6 h-6 text-pink-400" />
-                </div>
+              <div className="flex items-center gap-3">
+                <Shield className="w-6 h-6 text-pink-400" />
                 <span className="text-lg">24/7 Support</span>
               </div>
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* ===============================
-          TOP 10 TRENDING — FULLY RESPONSIVE ICONS
-      =============================== */}
+      {/* ----------------------------------------------------------
+          TRENDING NOW — RESPONSIVE ICONS
+      ----------------------------------------------------------- */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
 
+          {/* Section header */}
           <div className="mb-6">
-            <div className="flex items-center gap-2 mb-1">
+            <div className="flex items-center gap-2">
               <TrendingUp className="w-6 h-6 text-pink-500" />
               <h2 className="text-2xl text-gray-900 dark:text-white">Trending Now</h2>
             </div>
-            <p className="text-gray-500 dark:text-gray-400 text-sm ml-8">Top 10 most popular services this week</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm ml-8">
+              Top 10 most popular services this week
+            </p>
           </div>
 
           <div className="flex items-center gap-4">
 
+            {/* Left arrow */}
             <button
               onClick={() => scrollCarousel('left')}
-              className="shrink-0 bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+              className="shrink-0 bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full shadow-lg"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
 
-            {/* CAROUSEL */}
+            {/* Carousel */}
             <div
               id="trending-carousel"
-              className="flex-1 flex gap-6 overflow-x-auto overflow-y-hidden scrollbar-hide"
+              className="flex-1 flex gap-6 overflow-x-auto scrollbar-hide"
             >
-              {trendingProducts.map((product, i) => (
-                <div key={product.id} className="flex-shrink-0 flex items-center gap-3 w-[180px]">
+              {trendingProducts.map((product, index) => (
+                <div key={product.id} className="flex-shrink-0 flex flex-col items-center w-[150px]">
 
-                  {/* Ranking */}
-                  <span className="top10-rank text-4xl">{i + 1}</span>
+                  <span className="top10-rank text-4xl mb-1">{index + 1}</span>
 
-                  {/* Icon + Name */}
-                  <div className="flex flex-col items-start gap-1">
+                  {/* Responsive icon */}
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="
+                      rounded-xl object-cover
+                      w-16 h-16 
+                      sm:w-24 sm:h-24 
+                      md:w-32 md:h-32 
+                      lg:w-40 lg:h-40 
+                      xl:w-48 xl:h-48
+                    "
+                  />
 
-                    {/* RESPONSIVE ICON SIZE */}
-                    <div className="rounded-xl overflow-hidden shadow-md border border-gray-300 dark:border-gray-700">
-                      <img
-                        src={product.image}
-                        alt={product.name}
-                        className="
-                          object-cover rounded-xl
-                          w-16 h-16        /* mobile: 64px */
-                          sm:w-20 sm:h-20  /* small tablet: 80px */
-                          md:w-24 md:h-24  /* tablet: 96px */
-                          lg:w-28 lg:h-28  /* desktop: 112px */
-                          xl:w-32 xl:h-32  /* large screens: 128px */
-                        "
-                      />
-                    </div>
-
-                    <Link to={`/product/${product.id}`} className="text-left">
-                      <p className="text-xs sm:text-sm text-gray-900 dark:text-white line-clamp-2">{product.name}</p>
-                      <p className="text-xs sm:text-sm text-pink-600 dark:text-pink-400">{product.price}</p>
-                    </Link>
-
-                  </div>
+                  <Link to={`/product/${product.id}`} className="text-center mt-2">
+                    <p className="text-sm text-gray-900 dark:text-white line-clamp-2">{product.name}</p>
+                    <p className="text-sm text-pink-600 dark:text-pink-400">{product.price}</p>
+                  </Link>
                 </div>
               ))}
             </div>
 
+            {/* Right arrow */}
             <button
               onClick={() => scrollCarousel('right')}
-              className="shrink-0 bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+              className="shrink-0 bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full shadow-lg"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
-
           </div>
         </div>
       </section>
 
-      {/* ===============================
+      {/* ----------------------------------------------------------
           WHY CHOOSE US
-      =============================== */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="container mx-auto px-4">
-
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl text-gray-900 dark:text-white mb-6">Why Choose GHANIYY?</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-              We make premium subscriptions accessible and affordable for everyone
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-            <div className="text-center p-8 bg-gradient-to-br from-pink-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl border-2 hover:border-pink-400 transition-all">
-              <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                <Zap className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl mb-4 text-gray-900 dark:text-white">Instant Delivery</h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
-                Receive your premium accounts instantly in your email.
-              </p>
-            </div>
-
-            <div className="text-center p-8 bg-gradient-to-br from-pink-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl border-2 hover:border-pink-400 transition-all">
-              <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                <Star className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl mb-4 text-gray-900 dark:text-white">Premium Quality</h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
-                All accounts verified and tested. 7-day replacement guarantee.
-              </p>
-            </div>
-
-            <div className="text-center p-8 bg-gradient-to-br from-pink-50 to-white dark:from-gray-800 dark:to-gray-700 rounded-2xl border-2 hover:border-pink-400 transition-all">
-              <div className="w-20 h-20 bg-gradient-to-br from-pink-500 to-pink-600 rounded-full mx-auto mb-6 flex items-center justify-center shadow-lg">
-                <Shield className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-2xl mb-4 text-gray-900 dark:text-white">24/7 Support</h3>
-              <p className="text-lg text-gray-600 dark:text-gray-400">
-                Round-the-clock assistance for all your queries.
-              </p>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ===============================
-          CTA SECTION
-      =============================== */}
-      <section className="relative py-24 overflow-hidden bg-gradient-to-r from-pink-500 via-pink-600 to-pink-500">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-3xl" />
-          <div className="absolute bottom-10 right-10 w-40 h-40 bg-white rounded-full blur-3xl" />
-        </div>
-
-        <div className="relative container mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-6xl text-white font-bold mb-8 drop-shadow-lg">
-            Ready to Get Started?
+      ----------------------------------------------------------- */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
+            Why Choose GHANIYY?
           </h2>
-          <p className="text-2xl text-white/95 mb-12 max-w-3xl mx-auto">
-            Join thousands of satisfied customers enjoying premium services
+          <p className="text-gray-600 dark:text-gray-400 text-lg mt-4">
+            Premium subscriptions made affordable for everyone
           </p>
-
-          <Link
-            to="/services"
-            className="inline-flex items-center gap-3 bg-white text-pink-600 px-10 py-5 rounded-xl shadow-2xl hover:bg-pink-50 text-xl"
-          >
-            Browse Services
-            <ChevronRight className="w-6 h-6" />
-          </Link>
         </div>
       </section>
 
-      {/* ===============================
-          STYLES
-      =============================== */}
       <style>{`
         @keyframes fade-in {
           from { opacity: 0; transform: scale(0.95); }
           to { opacity: 1; transform: scale(1); }
         }
-
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out forwards;
-          opacity: 0;
-        }
-
-        .bg-radial-gradient {
-          background: radial-gradient(circle at center, var(--tw-gradient-stops));
-        }
-
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-
+        .animate-fade-in { animation: fade-in .6s ease-out forwards; opacity: 0; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
         .top10-rank {
           color: #ec4899;
-          -webkit-text-stroke-width: 2px;
-          -webkit-text-stroke-color: white;
-          text-shadow: 0 0 6px rgba(0,0,0,0.7);
+          -webkit-text-stroke: 2px white;
+          text-shadow: 0 0 6px rgba(0,0,0,.7);
           font-weight: 900;
         }
       `}</style>
