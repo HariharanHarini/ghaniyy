@@ -1,5 +1,4 @@
 import { Check, Users, Briefcase, Settings } from 'lucide-react';
-import { Link } from 'react-router-dom';
 
 export function Pricing() {
   const pricingTiers = [
@@ -93,12 +92,12 @@ export function Pricing() {
   ];
 
   return (
-    <div className="py-12">
+    <div className="py-12 bg-background">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-16">
+      <section className="bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-500/20 dark:via-purple-500/20 dark:to-pink-500/20 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-gray-900 mb-4">Flexible Pricing for Everyone</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-foreground mb-4">Flexible Pricing for Everyone</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Choose from individual plans, family bundles, or custom packages. 
             All with instant delivery and 7-day replacement guarantee.
           </p>
@@ -106,18 +105,18 @@ export function Pricing() {
       </section>
 
       {/* Pricing Tiers */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-gray-900 mb-4">Pricing Models</h2>
+            <h2 className="text-foreground mb-4">Pricing Models</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {pricingTiers.map((tier, index) => (
               <div
                 key={index}
-                className={`bg-white rounded-xl border-2 p-8 relative ${
-                  tier.popular ? 'border-purple-600 shadow-lg scale-105' : 'border-gray-200'
+                className={`bg-card rounded-xl border-2 p-8 relative transition-all ${
+                  tier.popular ? 'border-purple-600 shadow-lg scale-105' : 'border-border'
                 }`}
               >
                 {tier.popular && (
@@ -132,28 +131,27 @@ export function Pricing() {
                   {tier.icon}
                 </div>
 
-                <h3 className="text-gray-900 mb-2">{tier.name}</h3>
-                <p className="text-gray-600 mb-6">{tier.description}</p>
+                <h3 className="text-card-foreground mb-2">{tier.name}</h3>
+                <p className="text-muted-foreground mb-6">{tier.description}</p>
 
                 <ul className="space-y-3 mb-8">
                   {tier.features.map((feature, fIndex) => (
                     <li key={fIndex} className="flex items-start gap-2">
-                      <Check className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-gray-700 text-sm">{feature}</span>
+                      <Check className="w-5 h-5 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                      <span className="text-card-foreground text-sm">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
-                <Link
-                  to="/services"
+                <button
                   className={`block w-full text-center py-3 rounded-lg transition-all ${
                     tier.popular
                       ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:opacity-90'
-                      : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                      : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
                   }`}
                 >
                   Browse Services
-                </Link>
+                </button>
               </div>
             ))}
           </div>
@@ -161,36 +159,36 @@ export function Pricing() {
       </section>
 
       {/* Pricing Table */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-gray-900 mb-4">Sample Pricing</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Here's a quick overview of popular services and their pricing tiers
+            <h2 className="text-foreground mb-4">Sample Pricing</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Here&apos;s a quick overview of popular services and their pricing tiers
             </p>
           </div>
 
-          <div className="max-w-5xl mx-auto bg-white rounded-xl border border-gray-200 overflow-hidden">
+          <div className="max-w-5xl mx-auto bg-card rounded-xl border border-border overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
-                <thead className="bg-gray-50 border-b border-gray-200">
+                <thead className="bg-muted border-b border-border">
                   <tr>
-                    <th className="text-left px-6 py-4 text-gray-900">Service</th>
-                    <th className="text-left px-6 py-4 text-gray-900">Monthly</th>
-                    <th className="text-left px-6 py-4 text-gray-900">Quarterly</th>
-                    <th className="text-left px-6 py-4 text-gray-900">Yearly</th>
-                    <th className="text-left px-6 py-4 text-gray-900">Delivery ETA</th>
+                    <th className="text-left px-6 py-4 text-foreground">Service</th>
+                    <th className="text-left px-6 py-4 text-foreground">Monthly</th>
+                    <th className="text-left px-6 py-4 text-foreground">Quarterly</th>
+                    <th className="text-left px-6 py-4 text-foreground">Yearly</th>
+                    <th className="text-left px-6 py-4 text-foreground">Delivery ETA</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-gray-200">
+                <tbody className="divide-y divide-border">
                   {comparisonData.map((row, index) => (
-                    <tr key={index} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 text-gray-900">{row.service}</td>
-                      <td className="px-6 py-4 text-gray-700">{row.monthly}</td>
-                      <td className="px-6 py-4 text-gray-700">{row.quarterly}</td>
-                      <td className="px-6 py-4 text-gray-700">{row.yearly}</td>
+                    <tr key={index} className="hover:bg-muted/50 transition-colors">
+                      <td className="px-6 py-4 text-card-foreground">{row.service}</td>
+                      <td className="px-6 py-4 text-muted-foreground">{row.monthly}</td>
+                      <td className="px-6 py-4 text-muted-foreground">{row.quarterly}</td>
+                      <td className="px-6 py-4 text-muted-foreground">{row.yearly}</td>
                       <td className="px-6 py-4">
-                        <span className="bg-green-50 text-green-700 px-2 py-1 rounded text-sm">
+                        <span className="bg-green-500/10 text-green-600 dark:text-green-400 px-2 py-1 rounded text-sm border border-green-500/20">
                           {row.delivery}
                         </span>
                       </td>
@@ -201,14 +199,14 @@ export function Pricing() {
             </div>
           </div>
 
-          <p className="text-center text-gray-600 text-sm mt-6">
+          <p className="text-center text-muted-foreground text-sm mt-6">
             * Prices are indicative and may vary. Visit individual product pages for detailed pricing.
           </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-white mb-4">Need a custom quote?</h2>
@@ -216,12 +214,11 @@ export function Pricing() {
               For bulk orders, team licenses, or multi-service bundles, contact our sales team 
               for customized pricing and dedicated support.
             </p>
-            <Link
-              to="/contact"
+            <button
               className="inline-block bg-white text-blue-600 px-8 py-4 rounded-lg hover:bg-blue-50 transition-colors"
             >
               Contact Sales
-            </Link>
+            </button>
           </div>
         </div>
       </section>

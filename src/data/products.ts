@@ -50,7 +50,7 @@ export const products: Product[] = [
     category: 'Design',
     price: '₹29 - ₹1,199',
     duration: 'Monthly',
-    image: 'https://images.unsplash.com/photo-1649091245823-18be815da4f7?w=800',
+    image: 'https://i.pinimg.com/736x/ae/f1/66/aef16683ee0b5897a0775dd81f70156c.jpg',
     featured: true,
     description: 'Professional design tool with premium templates, brand kit, and magic resize features.',
     features: ['100M+ Premium Assets', 'Brand Kit', 'Magic Resize', 'Background Remover']
@@ -61,7 +61,7 @@ export const products: Product[] = [
     category: 'Design',
     price: 'Premium',
     duration: 'Lifetime',
-    image: 'https://images.unsplash.com/photo-1649091245823-18be815da4f7?w=800',
+    image: 'https://i.pinimg.com/736x/a2/1d/1b/a21d1bde3b3f91ed0db0de9d279c4ed4.jpg',
     featured: true,
     description: 'Lifetime access to Canva Pro with all premium features.',
     features: ['Lifetime Access', 'All Pro Features', 'Unlimited Designs', 'Priority Support']
@@ -82,7 +82,7 @@ export const products: Product[] = [
     category: 'Design',
     price: '₹149 - ₹329',
     duration: 'Monthly',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
+    image: 'https://i.pinimg.com/736x/80/0f/31/800f31dcd38e0b6129d6490d5df7df2c.jpg',
     description: 'Professional video editing tool with AI-powered features.',
     features: ['AI Video Editing', 'Premium Effects', 'No Watermark', 'HD Export']
   },
@@ -92,7 +92,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹449 - ₹1,499',
     duration: '1 Year',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/736x/10/22/ae/1022ae29842a223040b19796bb5af7b3.jpg',
     featured: true,
     description: 'ChatGPT Plus/Premium with GPT-4 access, faster responses, and priority access.',
     features: ['GPT-4 Access', 'Faster Response', 'Priority Access', 'DALL-E Access']
@@ -103,7 +103,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹199 - ₹399',
     duration: 'Monthly',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/1200x/06/18/46/061846cc0bf717a9976b9bcdcd8fc6f8.jpg',
     description: 'AI-powered coding assistant for developers.',
     features: ['Code Assistance', 'Bug Detection', 'Code Review', 'Multi-Language']
   },
@@ -113,7 +113,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹1,999',
     duration: 'Monthly',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/1200x/06/18/46/061846cc0bf717a9976b9bcdcd8fc6f8.jpg',
     description: 'Advanced AI code editor with intelligent code completion.',
     features: ['AI Code Completion', 'Smart Debugging', 'Multi-File Editing']
   },
@@ -123,7 +123,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹1,399',
     duration: 'Monthly',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/736x/68/e7/30/68e7301585189ceac883b91f185ef293.jpg',
     description: 'Premium AI voice generation and text-to-speech service.',
     features: ['Natural Voices', 'Voice Cloning', 'Multiple Languages', 'High Quality Audio']
   },
@@ -133,7 +133,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹99 - ₹349',
     duration: 'Monthly',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/1200x/08/6b/11/086b114c1094ac63db89dcbf8ee63de8.jpg',
     featured: true,
     description: 'Google Gemini Pro AI assistant with advanced capabilities.',
     features: ['Advanced AI', 'Multimodal', 'Fast Response', 'Google Integration']
@@ -144,7 +144,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹699',
     duration: 'Monthly',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/736x/7a/aa/17/7aaa1777868c37810cd73b1e81e65101.jpg',
     description: 'Google\'s advanced video generation AI model.',
     features: ['AI Video Generation', 'High Quality', 'Custom Styles']
   },
@@ -154,7 +154,7 @@ export const products: Product[] = [
     category: 'Streaming',
     price: '₹79 - ₹799',
     duration: 'Monthly',
-    image: 'https://images.unsplash.com/photo-1616469829941-c7200edec809?w=800',
+    image: 'https://i.pinimg.com/1200x/3d/65/03/3d650388af374546ea7341abb6d57f00.jpg',
     description: 'Premium access to Disney+ Hotstar with live sports and exclusive content.',
     features: ['Live Sports', 'Disney+ Content', '4K Quality', 'Multi-Device']
   },
@@ -197,7 +197,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹119 - ₹699',
     duration: '1 Year',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/1200x/0f/10/bb/0f10bb1512ad51eff3d5bc75fd16fe52.jpg',
     featured: true,
     description: 'Advanced AI search and research assistant.',
     features: ['AI Search', 'Research Tools', 'Unlimited Queries', 'Pro Models']
@@ -242,7 +242,7 @@ export const products: Product[] = [
     category: 'Design',
     price: '₹999',
     duration: '1 Year',
-    image: 'https://images.unsplash.com/photo-1649091245823-18be815da4f7?w=800',
+    image: 'https://i.pinimg.com/1200x/62/6a/b2/626ab25a4a065e8f276c1f102f2d0b14.jpg',
     description: 'Professional website builder for designers.',
     features: ['Responsive Design', 'Custom Code', 'CMS', 'SEO Tools']
   },
@@ -252,7 +252,7 @@ export const products: Product[] = [
     category: 'Design',
     price: '₹1,499',
     duration: '1 Year',
-    image: 'https://images.unsplash.com/photo-1649091245823-18be815da4f7?w=800',
+    image: 'https://i.pinimg.com/1200x/2d/77/95/2d7795fea0c9f20c351a09f409c9427c.jpg',
     description: 'Advanced Framer with unlimited projects and premium features.',
     features: ['Unlimited Projects', 'Advanced Features', 'Priority Support', 'Custom Domain']
   },
@@ -262,7 +262,7 @@ export const products: Product[] = [
     category: 'Engineering',
     price: '₹19,999',
     duration: '3 Years',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
+    image: 'https://i.pinimg.com/736x/ed/71/c5/ed71c510443257f952ba79e9c2ec4e39.jpg',
     description: 'Complete Autodesk suite for engineering and 3D design.',
     features: ['AutoCAD', 'Revit', '3ds Max', 'Maya', 'Fusion 360']
   },
@@ -272,7 +272,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹999',
     duration: '1 Year',
-    image: 'https://images.unsplash.com/photo-1733819109723-92a56f6872a5?w=800',
+    image: 'https://i.pinimg.com/1200x/a9/bf/9f/a9bf9f39efe8d4dfac98bdfca855a457.jpg',
     description: 'Advanced writing assistant with grammar, style, and tone suggestions.',
     features: ['Grammar Check', 'Style Suggestions', 'Plagiarism Detector', 'Tone Adjustment']
   },
@@ -282,7 +282,7 @@ export const products: Product[] = [
     category: 'Productivity',
     price: '₹1,199',
     duration: '6 Months',
-    image: 'https://images.unsplash.com/photo-1671944378859-08bcfa15a280?w=800',
+    image: 'https://i.pinimg.com/736x/9d/84/8b/9d848be31941958b1902d85faa413222.jpg',
     description: 'Project management tool for teams.',
     features: ['Project Tracking', 'Timeline View', 'Advanced Search', 'Reporting']
   },
@@ -292,7 +292,7 @@ export const products: Product[] = [
     category: 'Web Development',
     price: '₹1,299',
     duration: '1 Year',
-    image: 'https://images.unsplash.com/photo-1649091245823-18be815da4f7?w=800',
+    image: 'https://i.pinimg.com/736x/de/5e/1f/de5e1f5b215c1482cbcdcbca67a7f793.jpg',
     description: 'No-code website builder with powerful CMS.',
     features: ['Visual Editor', 'CMS', 'Hosting', 'SEO Tools']
   },
@@ -302,7 +302,7 @@ export const products: Product[] = [
     category: 'Productivity',
     price: '₹1,499',
     duration: '6 Months',
-    image: 'https://images.unsplash.com/photo-1671944378859-08bcfa15a280?w=800',
+    image: 'https://i.pinimg.com/1200x/3d/8b/ed/3d8bedb0f463fee7cb51983e3a3f4bca.jpg',
     description: 'All-in-one workspace with AI capabilities.',
     features: ['Unlimited Blocks', 'AI Assistant', 'Team Collaboration', 'Advanced Permissions']
   },
@@ -312,7 +312,7 @@ export const products: Product[] = [
     category: 'Design',
     price: 'Premium',
     duration: 'Lifetime',
-    image: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800',
+    image: 'https://i.pinimg.com/736x/52/cd/ad/52cdad468242c3137a58cfb0e8447092.jpg',
     description: 'Professional vector graphics software for Windows and Mac.',
     features: ['Vector Design', 'Photo Editing', 'Typography', 'Multi-Platform']
   },
@@ -322,7 +322,7 @@ export const products: Product[] = [
     category: 'Analytics',
     price: '₹1,999',
     duration: '2 Years',
-    image: 'https://images.unsplash.com/photo-1671944378859-08bcfa15a280?w=800',
+    image: 'https://i.pinimg.com/736x/b8/87/63/b8876357eecb487ac780d266086bb55a.jpg',
     description: 'Business intelligence and data visualization tool.',
     features: ['Data Visualization', 'Analytics', 'Reports', 'Dashboards']
   },
@@ -332,7 +332,7 @@ export const products: Product[] = [
     category: 'AI',
     price: 'Premium',
     duration: 'Lifetime',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/1200x/4b/94/0e/4b940e9b385331daef9bba8692fb4cc6.jpg',
     description: 'AI-powered resume builder with lifetime access.',
     features: ['AI Resume Builder', 'ATS Optimization', 'Unlimited Resumes', 'Cover Letters']
   },
@@ -342,7 +342,7 @@ export const products: Product[] = [
     category: 'Productivity',
     price: '₹1,499',
     duration: '3 Months (50-100 Seats)',
-    image: 'https://images.unsplash.com/photo-1671944378859-08bcfa15a280?w=800',
+    image: 'https://i.pinimg.com/1200x/71/5e/09/715e09865d9709b3fbdf24e7b6af0fd0.jpg',
     description: 'Online collaborative whiteboard platform.',
     features: ['Unlimited Boards', 'Team Collaboration', 'Integrations', 'Templates']
   },
@@ -352,7 +352,7 @@ export const products: Product[] = [
     category: 'Design',
     price: '₹1,299',
     duration: '1 Year',
-    image: 'https://images.unsplash.com/photo-1649091245823-18be815da4f7?w=800',
+    image: 'https://i.pinimg.com/736x/bf/e0/3e/bfe03e87eacbed794ab1b58f567c00d1.jpg',
     description: 'AI-powered presentation software.',
     features: ['Smart Templates', 'AI Design', 'Collaboration', 'Analytics']
   },
@@ -362,7 +362,7 @@ export const products: Product[] = [
     category: 'AI',
     price: '₹1,399',
     duration: '3 Months',
-    image: 'https://images.unsplash.com/photo-1757310998437-b2e8a7bd2e97?w=800',
+    image: 'https://i.pinimg.com/1200x/46/7b/3b/467b3b5ecd8e38cde59f7e0bdb7e431a.jpg',
     description: 'Premium AI voice generation for creators.',
     features: ['Voice Cloning', 'Text-to-Speech', 'Multiple Languages', 'Commercial Use']
   },

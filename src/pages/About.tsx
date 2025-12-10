@@ -43,29 +43,29 @@ export function About() {
   ];
 
   return (
-    <div className="py-12">
+    <div className="py-12 bg-background">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20">
+      <section className="bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-500/20 dark:via-purple-500/20 dark:to-pink-500/20 py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-gray-900 mb-6">Making premium access accessible.</h1>
-          <p className="text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            We're a small team focused on giving people and businesses affordable access to the 
+          <h1 className="text-foreground mb-6">Making premium access accessible.</h1>
+          <p className="text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            We&apos;re a small team focused on giving people and businesses affordable access to the 
             digital services they need — from streaming entertainment to business productivity tools. 
             We partner with suppliers and maintain secure delivery processes so you can get set up quickly.
           </p>
-          <p className="text-gray-700 max-w-3xl mx-auto mt-4">
+          <p className="text-muted-foreground max-w-3xl mx-auto mt-4">
             Our goal is simple: transparent service descriptions, reliable delivery, and friendly support.
           </p>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-gray-900 mb-4">Why Choose Ghaniyy?</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We're committed to providing the best digital subscription experience
+            <h2 className="text-foreground mb-4">Why Choose Ghaniyy?</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We&apos;re committed to providing the best digital subscription experience
             </p>
           </div>
 
@@ -75,8 +75,8 @@ export function About() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-white mb-4">
                   {value.icon}
                 </div>
-                <h3 className="text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600 text-sm">{value.description}</p>
+                <h3 className="text-foreground mb-2">{value.title}</h3>
+                <p className="text-muted-foreground text-sm">{value.description}</p>
               </div>
             ))}
           </div>
@@ -84,23 +84,23 @@ export function About() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-gray-900 mb-4">How It Works</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-foreground mb-4">How It Works</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
               Get started with premium subscriptions in three simple steps
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {steps.map((step, index) => (
-              <div key={index} className="bg-white rounded-xl p-8 border border-gray-200">
+              <div key={index} className="bg-card rounded-xl p-8 border border-border">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-purple-600 text-white mb-4">
                   <span className="text-xl">{step.number}</span>
                 </div>
-                <h3 className="text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-gray-600 text-sm">{step.description}</p>
+                <h3 className="text-card-foreground mb-2">{step.title}</h3>
+                <p className="text-muted-foreground text-sm">{step.description}</p>
               </div>
             ))}
           </div>
@@ -108,7 +108,7 @@ export function About() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-white mb-4">Delivery & Authenticity</h2>

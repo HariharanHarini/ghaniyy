@@ -65,40 +65,40 @@ export function FAQ() {
   };
 
   return (
-    <div className="py-12">
+    <div className="py-12 bg-background">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-16">
+      <section className="bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-500/20 dark:via-purple-500/20 dark:to-pink-500/20 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-gray-900 mb-4">Frequently Asked Questions</h1>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h1 className="text-foreground mb-4">Frequently Asked Questions</h1>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
             Find answers to common questions about our services, delivery, payments, and support.
           </p>
         </div>
       </section>
 
       {/* FAQ Accordion */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <div className="space-y-4">
               {faqs.map((faq, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl border border-gray-200 overflow-hidden"
+                  className="bg-card rounded-xl border border-border overflow-hidden"
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
-                    className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                    className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-muted/50 transition-colors"
                   >
-                    <span className="text-gray-900 pr-4">{faq.question}</span>
+                    <span className="text-foreground pr-4">{faq.question}</span>
                     {openIndex === index ? (
-                      <ChevronUp className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                      <ChevronUp className="w-5 h-5 text-muted-foreground flex-shrink-0" />
                     ) : (
-                      <ChevronDown className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                      <ChevronDown className="w-5 h-5 text-muted-foreground flex-shrink-0" />
                     )}
                   </button>
                   {openIndex === index && (
-                    <div className="px-6 pb-4 text-gray-600 leading-relaxed">
+                    <div className="px-6 pb-4 text-muted-foreground leading-relaxed">
                       {faq.answer}
                     </div>
                   )}
@@ -110,12 +110,12 @@ export function FAQ() {
       </section>
 
       {/* Contact CTA */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary/50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-gray-900 mb-4">Still have questions?</h2>
-            <p className="text-gray-600 mb-8">
-              Our support team is here to help. Reach out and we'll get back to you within 24 hours.
+            <h2 className="text-foreground mb-4">Still have questions?</h2>
+            <p className="text-muted-foreground mb-8">
+              Our support team is here to help. Reach out and we&apos;ll get back to you within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
@@ -126,7 +126,7 @@ export function FAQ() {
               </a>
               <a
                 href="mailto:support@premiumatcheap.com"
-                className="inline-block bg-white text-gray-900 px-8 py-4 rounded-lg border-2 border-gray-200 hover:border-blue-600 transition-colors"
+                className="inline-block bg-card text-foreground px-8 py-4 rounded-lg border-2 border-border hover:border-blue-600 transition-colors"
               >
                 Email Us
               </a>
