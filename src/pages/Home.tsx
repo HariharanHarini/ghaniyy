@@ -64,17 +64,19 @@ export function Home() {
         <div className="relative z-10 flex items-center justify-center min-h-screen px-4">
           <div className="max-w-5xl mx-auto text-center space-y-8 py-20">
             <h1 className="text-5xl md:text-7xl lg:text-8xl text-white">
-              Premium Tools & Services
+               Fast, Secure & Low-Cost
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-pink-600">
-                At Affordable Prices
+                Instant Digital Subscriptions
               </span>
             </h1>
 
+
             <p className="text-2xl md:text-3xl text-white/90">
-              Access 100+ premium subscriptions starting at{' '}
-              <span className="text-pink-400">₹29/month</span>
+              Get your favorite online services in just two clicks. No delays. No
+              complications. Just pure convenience.
             </p>
+
 
             <div className="pt-8 max-w-3xl mx-auto">
               <p className="text-xl text-white/90 mb-6">
